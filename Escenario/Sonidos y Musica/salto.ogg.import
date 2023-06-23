@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/salto.ogg-ccdcb7799ad9e13fe988b8478f2ed32d.oggstr"
+
+[deps]
+
+source_file="res://Escenario/Sonidos y Musica/salto.ogg"
+dest_files=[ "res://.import/salto.ogg-ccdcb7799ad9e13fe988b8478f2ed32d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

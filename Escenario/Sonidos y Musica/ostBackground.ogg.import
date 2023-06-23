@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ostBackground.ogg-e63badcb55fb2b3bd71b117d4172613b.oggstr"
+
+[deps]
+
+source_file="res://Escenario/Sonidos y Musica/ostBackground.ogg"
+dest_files=[ "res://.import/ostBackground.ogg-e63badcb55fb2b3bd71b117d4172613b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

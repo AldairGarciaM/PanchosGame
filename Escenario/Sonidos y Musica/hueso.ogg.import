@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hueso.ogg-97bbef27abbb101e6d3604726e4c73a2.oggstr"
+
+[deps]
+
+source_file="res://Escenario/Sonidos y Musica/hueso.ogg"
+dest_files=[ "res://.import/hueso.ogg-97bbef27abbb101e6d3604726e4c73a2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

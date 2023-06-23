@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/estrella.ogg-273fe43814fa71108fe3e9d7b53fcabd.oggstr"
+
+[deps]
+
+source_file="res://Escenario/Sonidos y Musica/estrella.ogg"
+dest_files=[ "res://.import/estrella.ogg-273fe43814fa71108fe3e9d7b53fcabd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

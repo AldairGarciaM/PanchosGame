@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Escenario/PlataformaEspecial/PlataformaMovil.gd" type="Script" id=1]
+[ext_resource path="res://Plataformas/tile34.png" type="Texture" id=2]
+[ext_resource path="res://Plataformas/tile33.png" type="Texture" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 31, -1, 0, 0, 7.77829, 0, -118, 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "PlataformaMovil"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 147.05, 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[node name="PlataformaMovil" type="Node2D"]
+position = Vector2( 504, 277 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 31, -1 )
+rotation = 3.13488
+script = ExtResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
+position = Vector2( 31.006, -0.791901 )
+rotation = -3.13488
+
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/KinematicBody2D"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="Path2D/PathFollow2D/KinematicBody2D"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D/PathFollow2D/KinematicBody2D"]
+polygon = PoolVector2Array( -28, -17, 90, -17, 78, 0, 75, -2, 71, 3, 70, 1, 65, 9, 60, 7, 54, 16, 45, 13, 43, 17, 37, 12, 32, 17, 28, 13, 21, 18, 17, 11, 11, 16, 3, 5, -1, 12, -6, -1, -8, 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D"]
+playback_speed = 0.5
+anims/PlataformaMovil = SubResource( 2 )
+anims/RESET = SubResource( 3 )

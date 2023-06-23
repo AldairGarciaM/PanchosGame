@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/panchoataque.ogg-15cb94e39fe95dd347071880fce92744.oggstr"
+
+[deps]
+
+source_file="res://Escenario/Sonidos y Musica/panchoataque.ogg"
+dest_files=[ "res://.import/panchoataque.ogg-15cb94e39fe95dd347071880fce92744.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

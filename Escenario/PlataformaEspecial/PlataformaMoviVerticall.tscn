@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Plataformas/tile34.png" type="Texture" id=2]
+[ext_resource path="res://Plataformas/tile33.png" type="Texture" id=3]
+[ext_resource path="res://Escenario/PlataformaEspecial/PlataformaMoviVerticall.gd" type="Script" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 495, 259, 0, 0, 0, 0, 496, 472 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "PlataformaVertical"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 200.41, 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 200.41 ]
+}
+
+[node name="PlataformaVertical" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 495, 259 )
+rotation = 1.5661
+offset = 200.41
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
+position = Vector2( -261.319, 493.779 )
+rotation = -1.5661
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/KinematicBody2D"]
+position = Vector2( 463, 258 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="Path2D/PathFollow2D/KinematicBody2D"]
+position = Vector2( 527, 258 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D/PathFollow2D/KinematicBody2D"]
+polygon = PoolVector2Array( 435, 241, 554, 241, 542, 255, 539, 256, 535, 261, 533, 259, 528, 268, 523, 264, 516, 275, 509, 269, 505, 276, 500, 271, 496, 277, 490, 272, 485, 278, 481, 271, 474, 275, 466, 264, 463, 267, 457, 257, 456, 262, 452, 255, 450, 258 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D"]
+playback_speed = 0.4
+anims/PlataformaVertical = SubResource( 2 )
+anims/RESET = SubResource( 3 )
